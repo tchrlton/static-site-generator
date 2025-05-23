@@ -25,6 +25,3 @@ class TestExtractMarkdown(unittest.TestCase):
         "This is text with a [link](https://www.google.com) and another [link2](https://www.facebook.com)"
     )
     self.assertListEqual([("link", "https://www.google.com"), ("link2", "https://www.facebook.com")], matches)
-
-if __name__ == "__main__":
-  unittest.main()

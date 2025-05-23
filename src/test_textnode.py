@@ -68,6 +68,3 @@ class TestTextNode(unittest.TestCase):
         node = TextNode("This is a text node", "invalid")
         with self.assertRaises(Exception):
             text_node_to_html_node(node)
-
-if __name__ == "__main__":
-    unittest.main()
