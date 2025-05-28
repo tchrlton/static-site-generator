@@ -1,8 +1,15 @@
-from texttotextnodes import text_to_textnodes
+from markdowntohtmlnode import markdown_to_html_node
 
 def main():
-    text = "This is **text** with an _italic_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
-    nodes = text_to_textnodes(text)
+    md = """
+This is **bolded** paragraph
+text in a p
+tag here
+
+This is another paragraph with _italic_ text and `code` here
+
+"""
+    nodes = markdown_to_html_node(md)
     print(nodes)
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ class BlockType(Enum):
 def block_to_block_type(block: str) -> BlockType:
   if re.match(r"^#{1,6}", block):
     return BlockType.HEADING
-  elif re.match(r"^```.*```$", block):
+  elif re.match(r"^```[\s\S]*```$", block):
     return BlockType.CODE
   elif re.match(r"^>", block):
     return BlockType.QUOTE
