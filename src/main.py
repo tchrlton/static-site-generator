@@ -1,16 +1,8 @@
 from markdowntohtmlnode import markdown_to_html_node
+from copycontentsdirectory import copy_contents_directory
 
 def main():
-    md = """
-This is **bolded** paragraph
-text in a p
-tag here
-
-This is another paragraph with _italic_ text and `code` here
-
-"""
-    nodes = markdown_to_html_node(md)
-    print(nodes)
+    copy_contents_directory("static", "public")
 
 if __name__ == "__main__":
     main()
