@@ -1,3 +1,4 @@
+import os
 from extracttitle import extract_title
 from markdowntohtmlnode import markdown_to_html_node
 
@@ -15,6 +16,9 @@ def generate_page(from_path: str, template_path: str, dest_path: str):
   title = extract_title(content)
   
   updated_template = template.replace("{{ Title }}", title).replace("{{ Content }}", html_string)
+
+  # Create the destination directory if it doesn't exist
+  os.makedirs(os.path.dirname(dest_path), exist_ok=True)
 
   with open(dest_path, "w") as f:
     f.write(updated_template)

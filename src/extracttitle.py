@@ -1,5 +1,7 @@
-def extract_title(markdown: str) -> str:
-  if markdown.startswith("# "):
-    return markdown[2:].strip()
+import re
 
-  raise Exception("No title found")
+def extract_title(markdown: str) -> str:
+    match = re.search(r"# (.*)", markdown)
+    if match:
+        return match.group(1).strip()
+    return "My Website"
