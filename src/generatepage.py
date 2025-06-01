@@ -19,8 +19,11 @@ def generate_page(from_path, template_path, dest_path, basepath):
     template = template.replace("{{ Title }}", title)
     template = template.replace("{{ Content }}", html_content)
     
+    # Replace href and src paths with both single and double quotes
     template = template.replace('href="/', f'href="{basepath}')
     template = template.replace('src="/', f'src="{basepath}')
+    template = template.replace("href='/", f"href='{basepath}")
+    template = template.replace("src='/", f"src='{basepath}")
     
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     
